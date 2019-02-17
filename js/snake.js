@@ -97,30 +97,30 @@ function control(event) {
 	var cod = event.keyCode;
 	if (ejex) {
 		if (cod == 38) {
-			ydir = -size;
-			xdir = 0;
-			ejex = false;
-			ejey = true;
+				ydir = -size;
+				xdir = 0;
+				ejex = false;
+				ejey = true;
 		}
 		if (cod == 40) {
-			ydir = +size;
-			xdir = 0;
-			ejex = false;
-			ejey = true;
+				ydir = size;
+				xdir = 0;
+				ejex = false;
+				ejey = true;
 		}
 	}
 	if (ejey) {
 		if (cod == 37) {
-			ydir = 0;
-			xdir = -size;
-			ejey = false;
-			ejex = true;
+				ydir = 0;
+				xdir = -size;
+				ejey = false;
+				ejex = true;
 		}
 		if (cod == 39) {
-			ydir = 0;
-			xdir = +size;
-			ejey = false;
-			ejex = true;
+				ydir = 0;
+				xdir = size;
+				ejey = false;
+				ejex = true;
 		}
 	}
 }
@@ -131,8 +131,8 @@ function gameOver() {
 	ydir = 0;
 	ejex = true;
 	ejey = true;
-	head = new Cola;
-	comida = new Comida;
+	head = new Cola(20, 20);
+	comida = new Comida();
 	alert("GAME OVER");
 }
 
