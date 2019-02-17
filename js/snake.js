@@ -121,6 +121,9 @@ function dibujar() {
 function main() {
 	dibujar();
 	movimiento();
+	if (head.choque(comida)) {
+		comida.colocar();
+	}
 }
 
 setInterval("main()", velocidad);
