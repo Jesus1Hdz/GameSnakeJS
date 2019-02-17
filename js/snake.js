@@ -125,7 +125,7 @@ function control(event) {
 	}
 }
 
-//Game Over
+//Game Over al chocar con el Body
 function gameOver() {
 	xdir = 0;
 	ydir = 0;
@@ -134,6 +134,14 @@ function gameOver() {
 	head = new Cola;
 	comida = new Comida;
 	alert("GAME OVER");
+}
+
+// Game Over al chocar con las paredes del canvas
+function choquePared() {
+	// 590 del canvas
+	if (head.x <0 || head.x > 590 || head.y < 0 || head.y > 590) {
+		gameOver();
+	}
 }
 
 //Colision
@@ -166,6 +174,7 @@ function dibujar() {
 
 function main() {
 	ChoqueBody();
+	choquePared();
 	dibujar();
 	movimiento();
 	if (head.choque(comida)) {
