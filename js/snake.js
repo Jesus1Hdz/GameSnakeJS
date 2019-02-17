@@ -25,15 +25,29 @@ class Cola extends objeto {
 		super();
 		this.x = x;
 		this.y = y;
+		this.next = null;
 	}
 	dibujar(ctx) {
+		if(this.next != null) {
+			this.next.dibujar(ctx);
+		}
 		// Color de la Serpiente
 		ctx.fillStyle = "#ff002d";
 		ctx.fillRect(this.x, this.y, this.size, this.size);
 	}
 	setxy(x,y) {
+		if (this.next != null) {
+			this.next.setxy(this.x, this.y);
+		}
 		this.x = x;
 		this.y = y;
+	}
+	meter() {
+		if (this.next == null) {
+			this.next = new Cola(this.x, this.y);
+		} else {
+			this.next.meter();
+		}
 	}
 }
 
@@ -123,6 +137,7 @@ function main() {
 	movimiento();
 	if (head.choque(comida)) {
 		comida.colocar();
+		head.meter();
 	}
 }
 
