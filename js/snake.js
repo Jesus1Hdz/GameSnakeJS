@@ -78,7 +78,7 @@ class Comida extends objeto {
 // Objetos del Juego
 var head = new Cola(20,20);
 var comida = new Comida;
-var ejex = false;
+var ejex = true;
 var ejey = true;
 var xdir = 0;
 var ydir = 0;
@@ -95,32 +95,38 @@ function movimiento() {
 // 38=arriba	40=abajo	37=derecha	39=izquierda
 function control(event) {
 	var cod = event.keyCode;
+	//EjeVertical
 	if (ejex) {
+		//Arriba
 		if (cod == 38) {
-			ydir = -size;
-			xdir = 0;
-			ejex = false;
-			ejey = true;
+				ydir = -size;
+				xdir = 0;
+				ejex = false;
+				ejey = true;
 		}
+		//Abajo
 		if (cod == 40) {
-			ydir = +size;
-			xdir = 0;
-			ejex = false;
-			ejey = true;
+				ydir = size;
+				xdir = 0;
+				ejex = false;
+				ejey = true;
 		}
 	}
+	//EjeHorizontal
 	if (ejey) {
+		//Izquierda
 		if (cod == 37) {
-			ydir = 0;
-			xdir = -size;
-			ejey = false;
-			ejex = true;
+				ydir = 0;
+				xdir = -size;
+				ejey = false;
+				ejex = true;
 		}
+		//Derecha
 		if (cod == 39) {
-			ydir = 0;
-			xdir = +size;
-			ejey = false;
-			ejex = true;
+				ydir = 0;
+				xdir = size;
+				ejey = false;
+				ejex = true;
 		}
 	}
 }
@@ -131,8 +137,8 @@ function gameOver() {
 	ydir = 0;
 	ejex = true;
 	ejey = true;
-	head = new Cola;
-	comida = new Comida;
+	head = new Cola(20, 20);
+	comida = new Comida();
 	alert("GAME OVER");
 }
 
@@ -149,7 +155,7 @@ function ChoqueBody() {
 	var temp = null;
 	try {
 		temp = head.verNext().verNext();
-	}catch(error) {
+	}catch(err) {
 		temp = null;
 	}
 	while(temp != null) {
