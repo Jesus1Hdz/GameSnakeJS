@@ -31,10 +31,24 @@ class Cola extends objeto {
 		ctx.fillStyle = "#ff002d";
 		ctx.fillRect(this.x, this.y, this.size, this.size);
 	}
+	setxy(x,y) {
+		this.x = x;
+		this.y = y;
+	}
 }
 
 // Objetos del Juego
 var head = new Cola(20,20);
+var ejex = false;
+var ejey = true;
+var xdir = 0;
+var ydir = 0;
+
+function movimiento() {
+	var newx = head.x+2;
+	var newy = head.y+1;
+	head.setxy(newx,newy);
+}
 
 // Dibujo
 function dibujar() {
@@ -47,6 +61,7 @@ function dibujar() {
 
 function main() {
 	dibujar();
+	movimiento();
 }
 
 setInterval("main()", velocidad);
