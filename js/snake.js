@@ -37,8 +37,30 @@ class Cola extends objeto {
 	}
 }
 
+//Comida
+class Comida extends objeto {
+	constructor() {
+		super();
+		this.x = this.generar();
+		this.y = this.generar();
+	}
+	//Generar numeroa aleatorios entre (0-59)*10 y los redondeamos
+	generar() {
+		var num = (Math.floor(Math.random() * 59))*10;
+		return num;
+	}
+	colocar() {
+		this.x = this.generar();
+		this.y = this.generar();
+	}
+	dibujar(ctx) {
+		ctx.fillStyle = "#16ffff";
+		ctx.fillRect(this.x, this.y, this.size, this.size);
+	}
+}
 // Objetos del Juego
 var head = new Cola(20,20);
+var comida = new Comida;
 var ejex = false;
 var ejey = true;
 var xdir = 0;
@@ -93,6 +115,7 @@ function dibujar() {
 	ctx.clearRect(0,0, canvas.width, canvas.height);
 		//DIBUJO DOWN
 		head.dibujar(ctx);
+		comida.dibujar(ctx);
 }
 
 function main() {
