@@ -44,10 +44,46 @@ var ejey = true;
 var xdir = 0;
 var ydir = 0;
 
+// Movimiento de la Serpiente
 function movimiento() {
-	var newx = head.x+2;
-	var newy = head.y+1;
+	var newx = head.x+xdir;
+	var newy = head.y+ydir;
 	head.setxy(newx,newy);
+}
+
+// Teclas de Control
+// Código dem las teclas de dirección
+// 38=arriba	40=abajo	37=derecha	39=izquierda
+function control(event) {
+	var cod = event.keyCode;
+	if (ejex) {
+		if (cod == 38) {
+			ydir = -size;
+			xdir = 0;
+			ejex = false;
+			ejey = true;
+		}
+		if (cod == 40) {
+			ydir = +size;
+			xdir = 0;
+			ejex = false;
+			ejey = true;
+		}
+	}
+	if (ejey) {
+		if (cod == 37) {
+			ydir = 0;
+			xdir = -size;
+			ejey = false;
+			ejex = true;
+		}
+		if (cod == 39) {
+			ydir = 0;
+			xdir = +size;
+			ejey = false;
+			ejex = true;
+		}
+	}
 }
 
 // Dibujo
