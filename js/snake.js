@@ -49,6 +49,9 @@ class Cola extends objeto {
 			this.next.meter();
 		}
 	}
+	verNext() {
+		return this.next;
+	}
 }
 
 //Comida
@@ -122,6 +125,35 @@ function control(event) {
 	}
 }
 
+//Game Over
+function gameOver() {
+	xdir = 0;
+	ydir = 0;
+	ejex = true;
+	ejey = true;
+	head = new Cola;
+	comida = new Comida;
+	alert("GAME OVER");
+}
+
+//Colision
+function ChoqueBody() {
+	var temp = null;
+	try {
+		temp = head.verNext().verNext();
+	}catch(error) {
+		temp = null;
+	}
+	while(temp != null) {
+		if (head.choque(temp)) {
+			//Game Over
+			gameOver();
+		} else {
+			temp = temp.verNext();
+		}
+	}
+}
+
 // Dibujo
 function dibujar() {
 	var canvas = document.getElementById("canvas");
@@ -133,6 +165,7 @@ function dibujar() {
 }
 
 function main() {
+	ChoqueBody();
 	dibujar();
 	movimiento();
 	if (head.choque(comida)) {
