@@ -1,4 +1,23 @@
+body {
+	background-image: url('../img/img.png');
+}
+
 canvas {
 	border: 2px solid black;
-	background: #66CDAA;
+	/*background: #66CDAA;*/
+	background: #E6F0D0;
+}
+
+.title {
+	background: #E6F0D0;
+}
+
+
+.container { 
+  overflow:hidden; 
+}
+
+.p-billy {
+	background: #2e2e2e;
+	color: #fff;
 }

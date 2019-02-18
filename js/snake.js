@@ -32,7 +32,7 @@ class Cola extends objeto {
 			this.next.dibujar(ctx);
 		}
 		// Color de la Serpiente
-		ctx.fillStyle = "#ff002d";
+		ctx.fillStyle = "#8B4513";
 		ctx.fillRect(this.x, this.y, this.size, this.size);
 	}
 	setxy(x,y) {
@@ -54,7 +54,7 @@ class Cola extends objeto {
 	}
 }
 
-//Comida
+//Comida-Fresas
 class Comida extends objeto {
 	constructor() {
 		super();
@@ -71,7 +71,8 @@ class Comida extends objeto {
 		this.y = this.generar();
 	}
 	dibujar(ctx) {
-		ctx.fillStyle = "#16ffff";
+		//Color de las Fresas
+		ctx.fillStyle = "#ff006e";
 		ctx.fillRect(this.x, this.y, this.size, this.size);
 	}
 }
