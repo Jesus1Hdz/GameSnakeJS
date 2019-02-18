@@ -22,6 +22,7 @@
 		</div>
 
 		<div class="container p-billy">
+
 			<div class="row">
 				<div class="col-md-12">
 					<h3>¿Quien es Billy?</h3>
@@ -44,7 +45,12 @@
 					</center>
 				</div>
 			</div>
+
+			<center>
+				<a href="https://github.com/Jesus1Hdz/GameSnakeJS" target="_blank">Código Fuente-Jesús Hernández</a>
+			</center>
 			<br>
+				
 		</div>
 
 		<!-- //JS-FRAMEWORK// -->

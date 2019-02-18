@@ -4,7 +4,6 @@ body {
 
 canvas {
 	border: 2px solid black;
-	/*background: #66CDAA;*/
 	background: #E6F0D0;
 }
 
@@ -12,12 +11,27 @@ canvas {
 	background: #E6F0D0;
 }
 
-
-.container { 
-  overflow:hidden; 
-}
-
 .p-billy {
 	background: #2e2e2e;
 	color: #fff;
+}
+ 
+ h1 {
+ 	color: #00c189;
+ }
+
+a:link {
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: #E6F0D0;
 }
